@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Создание привета
+{% endblock %}
+
+{% block content %}
+    <h1>Создание привета</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.froms }}<br>
+        {{ form.hello }}<br>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+        <a type="button" class="btn btn-danger" href="/hellos">Отмена</a>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
+
+{% block button1 %}
+На главную
+{% endblock %}
+
+{% block button2 %}
+Обо мне
+{% endblock %}
+
+{% block link1 %}
+/
+{% endblock %}
+
+{% block link2 %}
+/about
+{% endblock %}

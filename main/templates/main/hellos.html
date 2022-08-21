@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="row no-gutters">
+        <div class="col-12 col-sm-6 col-md-8" style="padding-left: 30px">
+            <h1>Приветы от людей</h1>
+        </div>
+        <div class="col-6 col-md-4" style="padding-top: 15px; padding-left: 280px">
+            <a type="button" class="btn btn-outline-primary btn-sm" href="/create-hello">Добавить привет</a>
+        </div>
+    </div>
+    {% if hellos %}
+        {% for el in hellos %}
+            <div class="alert alert-primary" style="background: linear-gradient(to right, #5DC1F5, #5DEEF5)">
+                <h4>{{ el.froms }}</h4>
+                <p>{{ el.hello }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-danger">
+            <h4>Приветов пока что нет. Оставь свой первый привет!</h4>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block button1 %}
+<span style="color: #ffffff">На главную</span>
+{% endblock %}
+
+{% block button2 %}
+<span style="color: #ffffff">Обо мне</span>
+{% endblock %}
+
+{% block link1 %}
+/
+{% endblock %}
+
+{% block link2 %}
+/about
+{% endblock %}
